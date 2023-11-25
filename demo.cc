@@ -1,10 +1,3 @@
-/*
- * CNN demo for MNIST dataset
- * Author: Kai Han (kaihana@163.com)
- * Details in https://github.com/iamhankai/mini-dnn-cpp
- * Copyright 2018 Kai Han
- */
-#include <Eigen/Dense>
 #include <algorithm>
 #include <iostream>
 
@@ -64,7 +57,7 @@ int main() {
   const int n_epoch = 5;
   const int batch_size = 128;
   for (int epoch = 0; epoch < n_epoch; epoch ++) {
-    shuffle_data(dataset.train_data, dataset.train_labels);
+    // shuffle_data(dataset.train_data, dataset.train_labels);
     for (int start_idx = 0; start_idx < n_train; start_idx += batch_size) {
       int ith_batch = start_idx / batch_size;
       Matrix x_batch = dataset.train_data.block(0, start_idx, dim_in,
